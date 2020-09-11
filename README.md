@@ -9,12 +9,15 @@ There are 3 types of data within the files and they can be distinguished by thei
 in the first column of each row, where the column separator is the character "ç".
 
 - Salesman data: Salesman data has the identifier 001 and follows the following format:
+
 001çCPFçNameçSalary
 
 - Client data: Client data has the identifier 002 and follows the following format:
+
 002çCNPJçNameçBusiness Area
 
 - Sales data: Sales data have the identifier 003 and follow the following format:
+
 003çSale IDç[Item ID-Item Quantity-Item Price]çSalesman name
 
 The system continuously reads all files within the default HOMEPATH/data/ in directory and places the output 
