@@ -47,7 +47,7 @@ If you don't want to use the provided bat file, you can set manually the environ
 jar file generated in the previous section. The command line to execute jar file would be like this:
 
 ```
-java -jar target/service-report.jar
+java -jar target/report-service.jar
 ```
 
 
