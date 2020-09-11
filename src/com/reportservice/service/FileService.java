@@ -18,8 +18,14 @@ public class FileService {
 	private File directoryOutPath;
 	
 	public FileService(final String filePath) {
-		directoryInPath = new File(filePath + "\\data\\in");
-		directoryOutPath = new File(filePath + "\\data\\out");
+		final String baseFolderPath = filePath + "\\data";
+		File baseFolder = new File(baseFolderPath);
+		directoryInPath = new File(baseFolderPath + "\\in");
+		directoryOutPath = new File(baseFolderPath + "\\out");
+		
+		createFolderIfNotExists(baseFolder);
+		createFolderIfNotExists(directoryInPath);
+		createFolderIfNotExists(directoryOutPath);
 	}
 	
 	public List<String> extractInputFiles() {
@@ -71,6 +77,12 @@ public class FileService {
 	public void removeParsedFile(final String filename) {
 		final File resultFile = new File(filename);
 		resultFile.delete();
+	}
+	
+	private void createFolderIfNotExists(final File file) {
+		if ( !file.exists() ) {
+			file.mkdir();
+		}
 	}
 	
 	private void writeOnFile(final File file, final String content) throws IOException {
